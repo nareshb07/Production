@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -35,7 +37,7 @@ SITE_ID = 15 # server1-dev.ap-south-1.elasticbeanstalk.com
 
 INSTALLED_APPS = [
     'channels',
-    'daphne'
+    'daphne',
     
     'chats.apps.ChatsConfig',
     'django.contrib.admin',
