@@ -35,6 +35,7 @@ SITE_ID = 15 # server1-dev.ap-south-1.elasticbeanstalk.com
 
 INSTALLED_APPS = [
     'channels',
+    'daphne'
     
     'chats.apps.ChatsConfig',
     'django.contrib.admin',
