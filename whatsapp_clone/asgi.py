@@ -18,7 +18,10 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.auth import AuthMiddlewareStack
 
 from chats.consumers import PersonalChatConsumer 
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'whatsapp_clone.settings')
+
+
 
 application = get_asgi_application()
 
