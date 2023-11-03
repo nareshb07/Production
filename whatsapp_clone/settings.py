@@ -171,21 +171,21 @@ USE_TZ = True
 
 ## For Local Server ###
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    # 'content/static',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+#     # 'content/static',
+# ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 
 ## For Local Server ###
 
 
-# STATIC_ROOT = 'static'
-# STATIC_URL = '/static/'
-# STATICFILES_DIRS = []
+STATIC_ROOT = 'static'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = []
 
 
 MEDIA_URL = '/media/'
