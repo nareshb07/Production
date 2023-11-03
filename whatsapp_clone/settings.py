@@ -37,8 +37,7 @@ SITE_ID = 15 # server1-dev.ap-south-1.elasticbeanstalk.com
 
 INSTALLED_APPS = [
     'channels',
-    'daphne',
-    
+        
     'chats.apps.ChatsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -104,7 +103,7 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("production-redis.pfbfmq.ng.0001.aps1.cache.amazonaws.com", 6379)],
+            "hosts": [("127.0.0.1", 6379)],
         },
     },
 }
@@ -172,21 +171,21 @@ USE_TZ = True
 
 ## For Local Server ###
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-#     # 'content/static',
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    # 'content/static',
+]
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 
 ## For Local Server ###
 
 
-STATIC_ROOT = 'static'
-STATIC_URL = '/static/'
-STATICFILES_DIRS = []
+# STATIC_ROOT = 'static'
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = []
 
 
 MEDIA_URL = '/media/'
