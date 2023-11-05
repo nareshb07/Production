@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-SITE_ID = 15 # server1-dev.ap-south-1.elasticbeanstalk.com
+SITE_ID = 16 # http://127.0.0.1:8000
 
 # SITE_ID = 14
 
@@ -99,14 +99,45 @@ TEMPLATES = [
 ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 
 # LEARN CHANNELS
-CHANNEL_LAYERS = {  
-    "default": {
-        "BACKEND": "channels_redis.core.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [("127.0.0.1", 6379)],
+# CHANNEL_LAYERS = {  
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("127.0.0.1", 6379)],
+#         },
+#     },
+# }
+
+
+#######3Production#################
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'servercache.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+        }
+    }
+}
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('servercache.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
         },
     },
+
+
 }
+
+
+############ For production ###############3
+
+
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -171,21 +202,21 @@ USE_TZ = True
 
 ## For Local Server ###
 
-# STATIC_URL = '/static/'
+STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-#     # 'content/static',
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    # 'content/static',
+]
 
-# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 
 ## For Local Server ###
 
 
-STATIC_ROOT = 'static'
-STATIC_URL = '/static/'
-STATICFILES_DIRS = []
+# STATIC_ROOT = 'static'
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = []
 
 
 MEDIA_URL = '/media/'
