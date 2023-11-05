@@ -121,7 +121,7 @@ DATABASES = {
         'NAME': 'database1',
         'USER': 'Naresh',
         'PASSWORD': 'Naresh1234',
-        'HOST': 'database1.cgzt4westmuy.ap-south-1.rds.amazonaws.com',
+        'HOST': 'database1.ccyxv8onq5g9.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
