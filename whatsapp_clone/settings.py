@@ -118,10 +118,10 @@ DATABASES = {
 
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
        
-        'NAME': 'database1',
+        'NAME': 'Server1',
         'USER': 'Naresh',
         'PASSWORD': 'Naresh1234',
-        'HOST': 'database1.ccyxv8onq5g9.ap-south-1.rds.amazonaws.com',
+        'HOST': 'server1.ccyxv8onq5g9.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
