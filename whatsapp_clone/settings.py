@@ -129,8 +129,6 @@ CHANNEL_LAYERS = {
             "hosts": [('servercache.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
         },
     },
-
-
 }
 
 
