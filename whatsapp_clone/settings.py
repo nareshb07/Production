@@ -134,7 +134,7 @@ CHANNEL_LAYERS = {
 
 ############ For production ###############3
 
-
+APPEND_SLASH = False
 
 
 # Database

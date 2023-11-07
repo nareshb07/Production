@@ -50,7 +50,7 @@ urlpatterns = [
     path('follower_profile_edit/', follower_profile_edit, name='follower_profile_edit'),
     path('user_feedback/<int:id>/', user_feedback, name='user_feedback'),
     path('rating/', feedback_and_rating, name='feedback_and_rating'),
-    path('payment', payment_request, name = "payment_request"),
+    path('payment/', payment_request, name = "payment_request"),
     # path('paymenthandler/<int:id>', paymenthandler, name = "paymenthandler"),
     path('callback/<int:id>/<int:rid>/', callback, name='callback'),
 
