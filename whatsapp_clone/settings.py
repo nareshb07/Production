@@ -211,6 +211,7 @@ USE_TZ = True
 
 ## For Local Server ###
 
+APPEND_SLASH = True
 
 STATIC_ROOT = 'static'
 STATIC_URL = '/static/'
