@@ -99,6 +99,10 @@ TEMPLATES = [
 ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 
 # LEARN CHANNELS
+
+
+
+############## For Local Server #################
 # CHANNEL_LAYERS = {  
 #     "default": {
 #         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -109,18 +113,38 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 # }
 
 
+# STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+#     # 'content/static',
+# ]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+
+
+############## For Local Server #################
+
+
+
+
+
+
+
+
+
 #######3Production#################
 
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis.m9kdid.ng.0001.aps1.cache.amazonaws.com::6379',
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': 'redis.m9kdid.ng.0001.aps1.cache.amazonaws.com::6379',
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
 
 CHANNEL_LAYERS = {
     'default': {
@@ -132,9 +156,15 @@ CHANNEL_LAYERS = {
 }
 
 
-############ For production ###############3
+
+STATIC_ROOT = 'static'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = []
 
 # APPEND_SLASH = False
+############ For production ###############3
+
+
 
 
 # Database
@@ -200,22 +230,10 @@ USE_TZ = True
 
 ## For Local Server ###
 
-# STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-#     # 'content/static',
-# ]
-
-# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 
 ## For Local Server ###
 
-APPEND_SLASH = True
-
-STATIC_ROOT = 'static'
-STATIC_URL = '/static/'
-STATICFILES_DIRS = []
 
 
 MEDIA_URL = '/media/'
