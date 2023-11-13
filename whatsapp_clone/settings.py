@@ -27,7 +27,7 @@ SECRET_KEY = 'zl4hyafu=ky(m@r&0pbg7qfsro*@r=2r%-js7y3#pj0g8onwvi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['172.31.7.60', 'server-dev.ap-south-1.elasticbeanstalk.com']
 
 SITE_ID = 16 # http://127.0.0.1:8000
 
@@ -37,7 +37,7 @@ SITE_ID = 16 # http://127.0.0.1:8000
 
 INSTALLED_APPS = [
     'channels',
-        
+    
     'chats.apps.ChatsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
