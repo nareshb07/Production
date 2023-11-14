@@ -139,7 +139,7 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 CACHES = {
   'default': {
     'BACKEND': 'django_redis.cache.RedisCache',
-    'LOCATION': 'redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com/0',
+    'LOCATION': 'serverredis-001.m9kdid.0001.aps1.cache.amazonaws.com/0',
     'OPTIONS': {
       'REDIS_CLIENT_CLASS': 'rediscluster.RedisCluster',
       'CONNECTION_POOL_CLASS': 'rediscluster.connection.ClusterConnectionPool',
