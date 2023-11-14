@@ -137,18 +137,15 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 
 
 CACHES = {
-  'default': {
-    'BACKEND': 'django_redis.cache.RedisCache',
-    'LOCATION': 'serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com/0',
-    'OPTIONS': {
-      'REDIS_CLIENT_CLASS': 'rediscluster.RedisCluster',
-      'CONNECTION_POOL_CLASS': 'rediscluster.connection.ClusterConnectionPool',
-      'CONNECTION_POOL_KWARGS': {
-        'skip_full_coverage_check': True # AWS ElasticCache has disabled CONFIG commands
-      }
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "your-redis-endpoint:your-redis-port",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
     }
-  }
 }
+
 
 # CACHES = {
 #     'default': {
@@ -194,7 +191,7 @@ DATABASES = {
         'NAME': 'Server1',
         'USER': 'Naresh',
         'PASSWORD': 'Naresh1234',
-        'HOST': 'server1.ccyxv8onq5g9.ap-south-1.rds.amazonaws.com',
+        'HOST': 'serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com',
         'PORT': '5432',
     }
 }
