@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'zl4hyafu=ky(m@r&0pbg7qfsro*@r=2r%-js7y3#pj0g8onwvi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['172.31.31.92', 'server2-dev.ap-south-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1','172.31.31.92', 'server2-dev.ap-south-1.elasticbeanstalk.com']
 
 SITE_ID = 16 # http://127.0.0.1:8000
 
@@ -139,7 +139,7 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis.m9kdid.ng.0001.aps1.cache.amazonaws.com::6379',
+        'LOCATION': 'serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
@@ -150,7 +150,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('redis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
+            "hosts": [('serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
         },
     },
 }
