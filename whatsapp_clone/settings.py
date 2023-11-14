@@ -136,17 +136,19 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 #######3Production#################
 
 
-# "default": {
-#     'BACKEND': 'django_redis.cache.RedisCache',
-#     'LOCATION':"redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com",
-#     'OPTIONS': {
-#         'REDIS_CLIENT_CLASS': 'rediscluster.StrictRedisCluster',
-#         'CONNECTION_POOL_CLASS': 'rediscluster.connection.ClusterConnectionPool',
-#         'CONNECTION_POOL_KWARGS': {
-#             'skip_full_coverage_check': True  # AWS ElasticCache has disabled CONFIG commands
-#          }
-#     }
-# }
+CACHES = {
+  'default': {
+    'BACKEND': 'django_redis.cache.RedisCache',
+    'LOCATION': 'redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com/0',
+    'OPTIONS': {
+      'REDIS_CLIENT_CLASS': 'rediscluster.RedisCluster',
+      'CONNECTION_POOL_CLASS': 'rediscluster.connection.ClusterConnectionPool',
+      'CONNECTION_POOL_KWARGS': {
+        'skip_full_coverage_check': True # AWS ElasticCache has disabled CONFIG commands
+      }
+    }
+  }
+}
 
 # CACHES = {
 #     'default': {
@@ -158,14 +160,14 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 #     }
 # }
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
-        },
-    },
-}
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [('serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
+#         },
+#     },
+# }
 
 
 
