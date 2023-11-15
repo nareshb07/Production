@@ -136,14 +136,13 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 #######3Production#################
 
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "your-redis-endpoint:your-redis-port",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
-    }
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
+        },
+    },
 }
 
 

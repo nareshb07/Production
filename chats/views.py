@@ -213,7 +213,7 @@ def chatPage(request, id):
             return JsonResponse({'success': False, 'message': 'No file provided.'})
     
     session_opened = UserProfile.objects.get(user = request.user , Follower = user_obj).is_session_opened
-    print("session_status",session_opened)
+    # print("session_status",session_opened)
         
 
     message_objs = ChatModel.objects.filter(thread_name=thread_name).all().order_by('timestamp')
