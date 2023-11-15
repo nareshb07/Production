@@ -136,48 +136,24 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 #######3Production#################
 
 
-# CACHES = {
+
+# CHANNEL_LAYERS = {
 #     'default': {
-#         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-#         'LOCATION': 
-#             ['redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',
-#              'redis://serverredis-001.m9kdid.0001.aps1.cache.amazonaws.com:6379',
-#              'redis://serverredis-002.m9kdid.0001.aps1.cache.amazonaws.com:6379']  # Update with your ElastiCache details
-#         # 'OPTIONS': {
-#         #     'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-#         # }"""  """
-#     }
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [('aws-my-5qmiuerujkvi.m9kdid.0001.aps1.cache.amazonaws.com', 6379)],
+#         },
+#     },
 # }
 
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('aws-my-5qmiuerujkvi.m9kdid.0001.aps1.cache.amazonaws.com', 6379)],
+            "hosts": [('127.0.0.1', 6379)],
         },
     },
 }
-
-
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django_redis.cache.RedisCache',
-#         'LOCATION': 'serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',
-#         'OPTIONS': {
-#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-#         }
-#     }
-# }
-
-# CHANNEL_LAYERS = {
-#     'default': {
-#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         'CONFIG': {
-#             "hosts": [('serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
-#         },
-#     },
-# }
-
 
 
 STATIC_ROOT = 'static'
@@ -203,7 +179,7 @@ DATABASES = {
         'NAME': 'Server1',
         'USER': 'Naresh',
         'PASSWORD': 'Naresh1234',
-        'HOST': 'serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com',
+        'HOST': 'server1.ccyxv8onq5g9.ap-south-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
