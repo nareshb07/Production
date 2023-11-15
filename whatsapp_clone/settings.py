@@ -136,27 +136,27 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 #######3Production#################
 
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': 
-            ['redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',
-             'redis://serverredis-001.m9kdid.0001.aps1.cache.amazonaws.com:6379',
-             'redis://serverredis-002.m9kdid.0001.aps1.cache.amazonaws.com:6379']  # Update with your ElastiCache details
-        # 'OPTIONS': {
-        #     'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        # }"""  """
-    }
-}
-
-# CHANNEL_LAYERS = {
+# CACHES = {
 #     'default': {
-#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
-#         'CONFIG': {
-#             "hosts": [('serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com', 6379)],
-#         },
-#     },
+#         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+#         'LOCATION': 
+#             ['redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',
+#              'redis://serverredis-001.m9kdid.0001.aps1.cache.amazonaws.com:6379',
+#              'redis://serverredis-002.m9kdid.0001.aps1.cache.amazonaws.com:6379']  # Update with your ElastiCache details
+#         # 'OPTIONS': {
+#         #     'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         # }"""  """
+#     }
 # }
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('aws-my-5qmiuerujkvi.m9kdid.0001.aps1.cache.amazonaws.com', 6379)],
+        },
+    },
+}
 
 
 # CACHES = {
