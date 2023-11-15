@@ -139,7 +139,7 @@ ASGI_APPLICATION = 'whatsapp_clone.asgi.application'
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis',
-        'LOCATION': 'serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',  # Update with your ElastiCache details
+        'LOCATION': 'redis://serverredis.m9kdid.ng.0001.aps1.cache.amazonaws.com:6379',  # Update with your ElastiCache details
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         }
