@@ -29,7 +29,7 @@ DEBUG = True
 
 # DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','172.31.31.92', 'server2-dev.ap-south-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1','server3-dev.ap-south-1.elasticbeanstalk.com']
 
 SITE_ID = 16 # http://127.0.0.1:8000
 
