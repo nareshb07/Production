@@ -164,7 +164,7 @@ def chat(request):
     try:
         UserProfile_obj = UserProfile.objects.filter(user_id=request.user.id).all().order_by('-is_session_opened', '-last_message')
     except Exception as e:
-        print(e)
+        print("chat Exception 1",e)
 
 
     return render(request, 'chatlist.html', context={'friends': UserProfile_obj})
@@ -180,11 +180,11 @@ def chatPage(request, id):
         UserProfile_obj = UserProfile.objects.filter(user_id=request.user.id).all().order_by('-is_session_opened', '-last_message')
         
     except Exception as e:
-        print(e)
+        print("chatPage Exception 1", e)
     try:
         UserProfile.objects.filter(Follower_id=id, user_id=request.user.id).update(message_seen=True)
     except Exception as e:
-        print(e)
+        print("chatPage Exception 1",e)
     user_obj = User.objects.get(id=id)
     if request.user.id > user_obj.id:
         thread_name = f'chat_{request.user.id}-{user_obj.id}'
