@@ -103,7 +103,7 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
         try:
             UserProfile.objects.filter(Follower_id=my_id, user_id=receiver_id).update(message_seen=False)
         except Exception as e:
-            print(e)
+            print("consumer.py save_message(self, username, thread_name, message, receiver)", e)
 
         try:
            
