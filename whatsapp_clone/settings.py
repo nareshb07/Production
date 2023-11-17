@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -29,7 +27,7 @@ DEBUG = True
 
 # DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','server3-dev.ap-south-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1','server3-dev.ap-south-1.elasticbeanstalk.com', '172.31.18.92']
 
 SITE_ID = 16 # http://127.0.0.1:8000
 
