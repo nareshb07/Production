@@ -6,15 +6,15 @@ const socket = new WebSocket(
   'ws://' + window.location.host + '/ws/' + id + '/'
 );
 
-socket.onopen = function() {
+socket.onopen = function(event) {
   console.log("CONNECTION ESTABLISHED");
 };
 
-socket.onclose = function() {
+socket.onclose = function(event) {
   console.log("CONNECTION LOST");
 };
 
-socket.onerror = function() {
+socket.onerror = function(event) {
   console.log("ERROR OCCURRED");
 };
 
